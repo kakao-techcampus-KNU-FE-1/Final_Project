@@ -1,9 +1,19 @@
+
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
 doors = ['Car', 'Goat 1', 'Goat 2']
 goats = ['Goat 1', 'Goat 2']
+
+def other_one(x, arr):
+  if x == arr[0]:
+    return arr[1]
+  elif x == arr[1]:
+    return arr[0]
+  else:
+    return 'Input Not Valid'
+
 
 def monty_hall():
   # car, goat1, goat2 중에서 무작위로 하나의 요소 선택 (인자로 리스트만 줬음 = 디폴트로 1개만 추출)
