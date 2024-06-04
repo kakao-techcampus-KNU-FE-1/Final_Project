@@ -8,5 +8,10 @@ def fizzbuzz(n):
       print('Buzz', end=' ')
 
 def print_fizz(i):
-    i % 3 = 0:
-        print("Fizz")
+    if i % 3 == 0:
+      print("Fizz")
+
+
+def check_buzz(i):
+    if i % 3 == 0 and i % 5 == 0:   
+      print('FizzBuzz') 
