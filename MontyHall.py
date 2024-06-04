@@ -37,3 +37,26 @@ def monty_hall():
     throw_out = np.random.choice(goats)
   return [original, throw_out, other_one(throw_out, goats)]
 
+# 만번의 시뮬레이션
+N = 10000
+
+# 참가자의 처음 선택한 문, 호스트가 열어야 하는 문, 남는 문
+original = []
+throw_out = []
+remains = []
+
+for i in np.arange(N):
+  result = monty_hall() # 매번 게임 실행
+
+  # 각 게임 결과를 알맞은 배열에 추가
+  original = np.append(original, result[0])
+  throw_out = np.append(throw_out, result[1])
+  remains = np.append(remains, result[2])
+
+df = pd.DataFrame({
+    '<Original Door Choice>': original,
+    '<Monty Throws Out>': throw_out,
+    '<Remaining Door>': remains
+})
+print(df)
+
