@@ -1,4 +1,3 @@
-
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -6,6 +5,15 @@ import matplotlib.pyplot as plt
 doors = ['Car', 'Goat 1', 'Goat 2']
 goats = ['Goat 1', 'Goat 2']
 
+# 해당 문이 염소인지? => 참 / 거짓 반환
+def is_goat(door_name):
+  if door_name == "Goat 1":
+    return True
+  elif door_name == "Goat 2":
+    return True
+  else:
+    return False
+  
 def other_one(x, arr):
   if x == arr[0]:
     return arr[1]
@@ -28,3 +36,4 @@ def monty_hall():
     # goat1, goat2 중에서 무작위로 하나의 염소 선택
     throw_out = np.random.choice(goats)
   return [original, throw_out, other_one(throw_out, goats)]
+
